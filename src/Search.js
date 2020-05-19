@@ -17,6 +17,7 @@ export default function Search(props) {
 
   function getWeather(response) {
     props.setWeather(response.data);
+    console.log(response.data);
   }
 
   return (
