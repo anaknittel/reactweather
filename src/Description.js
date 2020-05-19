@@ -12,12 +12,12 @@ export default function Description(props) {
       <Container fluid>
         <Row>
           <Col>
-            <div id="city">Lisbon</div>
+            <div id="city">{props.weather.name}</div>
             <div id="date">Tuesday, May 19</div>
             <ul>
-              <li>Description</li>
-              <li>Humidity</li>
-              <li>Wind</li>
+              <li>{props.weather.weather[0].description}</li>
+              <li>{props.weather.main.humidity}%</li>
+              <li>{props.weather.wind.speed}m/s</li>
             </ul>
           </Col>
           <Col>
