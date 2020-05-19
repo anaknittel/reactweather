@@ -1,17 +1,16 @@
-import React from "react";
-//import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
-import Weather from "./Weather";
+import Search from "./Search";
+import Description from "./Description";
 
-function App() {
+export default function App() {
+  let [weather, setWeather] = useState();
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello World from !!</h1>
-        <Weather />
-      </header>
+    <div>
+      <h1>Weather App</h1>
+      <Search setWeather={setWeather} />
+      <p />
+      <Description weather={weather} />
     </div>
   );
 }
-
-export default App;
