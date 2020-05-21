@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "./Description.css";
+import Time from "./Time";
 
 export default function Description(props) {
   console.log(props.weather);
@@ -12,7 +13,7 @@ export default function Description(props) {
       <Row className="row">
         <Col>
           <div id="city">{props.weather.name}</div>
-          <div id="date">Tuesday, May 19</div>
+          <Time />
           <ul>
             <li id="weather-description">
               {props.weather.weather[0].description}
