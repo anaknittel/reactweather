@@ -1,0 +1,19 @@
+#city {
+  font-size: 40px;
+  font-weight: 900px;
+  color: greenyellow;
+}
+
+#date {
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  margin-left: -35px;
+}
+
+#weather-description {
+  text-transform: capitalize;
+}

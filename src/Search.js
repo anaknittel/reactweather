@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Form } from "react-bootstrap";
+import "./Search.css";
 
 export default function Search(props) {
   let apiKey = "117c16c8e34c1f00f925ddb4052594d6";
@@ -22,10 +24,12 @@ export default function Search(props) {
 
   return (
     <div>
-      <form onSubmit={handleSearch}>
-        <input type="text" onChange={handleCityChange} />
-        <input type="submit" value="Search" />
-      </form>
+      <Form onSubmit={handleSearch}>
+        <input id="search-engine" type="text" onChange={handleCityChange} />
+        <br />
+        <input id="button" type="submit" value="Search" />
+        <input id="button" type="submit" value="Current Place" />
+      </Form>
     </div>
   );
 }

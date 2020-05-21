@@ -1,32 +1,32 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import "./Description.css";
 
 export default function Description(props) {
-  //let temperature = props.weather;
   console.log(props.weather);
   if (props.weather == null) {
     return <p> Please Search for a City</p>;
   } else {
-    let temperature = Math.round(props.weather.main.temp);
+    let temperature = Math.round(props.weather.main.temp * 10) / 10;
     return (
-      <Container fluid>
-        <Row>
-          <Col>
-            <div id="city">{props.weather.name}</div>
-            <div id="date">Tuesday, May 19</div>
-            <ul>
-              <li>{props.weather.weather[0].description}</li>
-              <li>{props.weather.main.humidity}%</li>
-              <li>{props.weather.wind.speed}m/s</li>
-            </ul>
-          </Col>
-          <Col>
-            <div id="image">*sun*</div>
-            <div id="temperature">{temperature}</div>
-            <span>ºC |ºF </span>
-          </Col>
-        </Row>
-      </Container>
+      <Row className="row">
+        <Col>
+          <div id="city">{props.weather.name}</div>
+          <div id="date">Tuesday, May 19</div>
+          <ul>
+            <li id="weather-description">
+              {props.weather.weather[0].description}
+            </li>
+            <li>{props.weather.main.humidity}%</li>
+            <li>{props.weather.wind.speed}m/s</li>
+          </ul>
+        </Col>
+        <Col>
+          <div id="image">*sun*</div>
+          <div id="temperature">{temperature}</div>
+          <span>ºC |ºF </span>
+        </Col>
+      </Row>
     );
   }
 }
