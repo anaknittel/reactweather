@@ -17,6 +17,17 @@ export default function Search(props) {
     setCityName(event.target.value);
   }
 
+  function handleCurrentPosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(getWeather);
+  }
+
+  function getCurrentPosition() {
+    navigator.geolocation.getCurrentPosition(handleCurrentPosition);
+  }
+
   function getWeather(response) {
     props.setWeather(response.data);
     console.log(response.data);
@@ -28,7 +39,12 @@ export default function Search(props) {
         <input id="search-engine" type="text" onChange={handleCityChange} />
         <br />
         <input id="button" type="submit" value="Search" />
-        <input id="button" type="submit" value="Current Place" />
+        <input
+          id="button"
+          type="submit"
+          value="Current Place"
+          onClick={getCurrentPosition}
+        />
       </Form>
     </div>
   );

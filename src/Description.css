@@ -2,11 +2,15 @@
   font-size: 40px;
   font-weight: 900px;
   color: greenyellow;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 #date {
   font-size: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
+  margin-top: auto;
+  margin-left: 5px;
 }
 
 ul {

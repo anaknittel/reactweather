@@ -23,7 +23,12 @@ export default function Description(props) {
           </ul>
         </Col>
         <Col>
-          <div id="image">*sun*</div>
+          <div>
+            <img
+              src={`http://openweathermap.org/img/wn/${props.weather.weather[0].icon}@2x.png`}
+              alt={props.weather.weather[0].description}
+            />
+          </div>
           <div id="temperature">{temperature}</div>
           <span>ºC |ºF </span>
         </Col>

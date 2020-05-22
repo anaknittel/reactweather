@@ -1,0 +1,12 @@
+#container {
+  display: block;
+  margin-top: 40px;
+  background: grey;
+  border-radius: 5px;
+  width: 600px;
+}
+
+h1 {
+  padding-top: 30px;
+  padding-left: 65px;
+}

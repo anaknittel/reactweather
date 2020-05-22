@@ -8,13 +8,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function App() {
   let [weather, setWeather] = useState();
   return (
-    <Container id="container">
-      <div>
-        <h1>Weather App!</h1>
-        <Search setWeather={setWeather} />
-        <p />
-        <Description weather={weather} />
-      </div>
-    </Container>
+    <div>
+      <h1>Weather App!</h1>
+      <Container id="container">
+        <div>
+          <Search setWeather={setWeather} />
+          <p />
+          <Description weather={weather} />
+        </div>
+      </Container>
+    </div>
   );
 }

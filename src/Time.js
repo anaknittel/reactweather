@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Time() {
   let date = new Date();
 
@@ -14,7 +16,13 @@ export default function Time() {
   let days = weekDays[date.getDay()];
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  return `${days}, ${formatHours()}`;
+  return (
+    <div id="date">
+      <strong>
+        {days}, {formatHours()}
+      </strong>
+    </div>
+  );
 
   function formatHours() {
     if (hours < 10) {
