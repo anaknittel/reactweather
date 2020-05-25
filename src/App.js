@@ -4,6 +4,7 @@ import Search from "./Search";
 import Description from "./Description";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Forecast from "./Forecast";
 
 export default function App() {
   let [weather, setWeather] = useState();
@@ -15,6 +16,8 @@ export default function App() {
           <Search setWeather={setWeather} />
           <p />
           <Description weather={weather} />
+          <p />
+          <Forecast weather={" "} />
         </div>
       </Container>
     </div>
