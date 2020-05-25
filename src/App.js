@@ -17,9 +17,14 @@ export default function App() {
           <p />
           <Description weather={weather} />
           <p />
-          <Forecast weather={" "} />
+          <Forecast weather={weather} />
         </div>
       </Container>
+      <small>
+        <a href="https://github.com/anaknittel/reactweather">
+          Check my Git-hub page!
+        </a>
+      </small>
     </div>
   );
 }
