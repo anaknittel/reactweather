@@ -16,10 +16,16 @@ export default function Description(props) {
           <Time />
           <ul>
             <li id="weather-description">
-              {props.weather.weather[0].description}
+              <strong>{props.weather.weather[0].description}</strong>
             </li>
-            <li>{props.weather.main.humidity}%</li>
-            <li>{props.weather.wind.speed}m/s</li>
+            <li>
+              <strong>Humidity: </strong>
+              {props.weather.main.humidity}%
+            </li>
+            <li>
+              <strong>Wind Speed: </strong> {props.weather.wind.speed}
+              m/s
+            </li>
           </ul>
         </Col>
         <Col>
@@ -27,10 +33,18 @@ export default function Description(props) {
             <img
               src={`http://openweathermap.org/img/wn/${props.weather.weather[0].icon}@2x.png`}
               alt={props.weather.weather[0].description}
+              id="icon"
             />
           </div>
-          <div id="temperature">{temperature}</div>
-          <span>ºC |ºF </span>
+          <div>
+            <strong id="temperature">{temperature}</strong>
+            <div id="units">
+              <div className="celsius" href=" ">
+                ºC
+              </div>{" "}
+              |ºF{" "}
+            </div>
+          </div>
         </Col>
       </Row>
     );
