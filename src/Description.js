@@ -2,9 +2,9 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "./Description.css";
 import Time from "./Time";
+import Units from "./Units";
 
 export default function Description(props) {
-  console.log(props.weather);
   if (props.weather == null) {
     return <p> Please Search for a City</p>;
   } else {
@@ -38,13 +38,8 @@ export default function Description(props) {
           </div>
           <div>
             <strong id="temperature">{temperature}</strong>
-            <div id="units">
-              <div className="celsius" href=" ">
-                ºC
-              </div>{" "}
-              |ºF{" "}
-            </div>
           </div>
+          <Units temperature="Math.round(props.weather.main.temp * 10) / 10" />
         </Col>
       </Row>
     );
